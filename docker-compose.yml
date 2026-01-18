@@ -1,0 +1,15 @@
+name: Address-Autocomplete-API
+
+services:
+  postgres:
+    container_name: address_autocomplete_postgres
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: address_autocomplete
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./docker_volumes/postgres:/var/lib/postgresql
+    ports:
+      - "5432:5432"
